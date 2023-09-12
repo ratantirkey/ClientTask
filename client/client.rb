@@ -1,17 +1,29 @@
+require_relative 'client_helper'
 require 'json'
 
-def parse_json_file(file_path)
+def search_data(data, field, value)
   begin
-    json_data = File.read(file_path)
-    JSON.parse(json_data)
+    value = filter_att(value)
+    field = filter_att(field)
+    value =
+      case field
+      when 'id'
+        return data.select { |item| item[field].to_s&.include?(value.to_s) }
+      when 'full_name'
+        value.capitalize
+      when 'email'
+        value.downcase
+      else
+        value.capitalize
+      end
+    data.select { |item| item[field]&.include?(value) }
   rescue StandardError => e
     puts "Error reading JSON file: #{e.message}"
-    exit(1)
   end
 end
 
 def search_clients(data, query)
-  matching_clients = data.select { |client| client['full_name']&.downcase&.include?(query) }
+  matching_clients = data.select { |client| client['full_name']&.downcase&.include?(query&.downcase) }
   matching_clients.each do |client|
     puts "ID: #{client['id']}, Name: #{client['full_name']}, Email: #{client['email']}"
   end
