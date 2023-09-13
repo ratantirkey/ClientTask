@@ -1,25 +1,22 @@
+# frozen_string_literal: true
 require_relative 'client_helper'
 require 'json'
 
 def search_data(data, field, value)
-  begin
-    value = filter_att(value)
-    field = filter_att(field)
-    value =
-      case field
-      when 'id'
-        return data.select { |item| item[field].to_s&.include?(value.to_s) }
-      when 'full_name'
-        value.capitalize
-      when 'email'
-        value.downcase
-      else
-        value.capitalize
-      end
-    data.select { |item| item[field]&.include?(value) }
-  rescue StandardError => e
-    puts "Error reading JSON file: #{e.message}"
-  end
+  value = filter_att(value)
+  field = filter_att(field)
+  value =
+    case field
+    when 'id'
+      return data.select { |item| item[field].to_s&.include?(value.to_s) }
+    when 'full_name'
+      value.capitalize
+    when 'email'
+      value.downcase
+    else
+      value.capitalize
+    end
+  data.select { |item| item[field]&.include?(value) }
 end
 
 def search_clients(data, query)

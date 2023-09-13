@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 require_relative 'client/client'
 
-if __FILE__ == $0
-  if ARGV.length == 0
+if __FILE__ == $PROGRAM_NAME
+  if ARGV.empty?
     puts 'Usage: ruby main.rb <search> <search data>'
     puts 'Usage: ruby main.rb <find_duplicates>'
     exit(1)
-  elsif ARGV.length != 2 and ARGV.include? 'search'
+  elsif (ARGV.length != 2) && ARGV.include?('search')
     puts 'Usage: ruby main.rb <search> <search data>'
     exit(1)
   end

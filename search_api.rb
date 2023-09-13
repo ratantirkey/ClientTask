@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'client/client'
 require 'sinatra'
 set :port, 3000
@@ -15,4 +17,3 @@ get '/query' do
     results.to_json
   end
 end
-
