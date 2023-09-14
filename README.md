@@ -10,9 +10,9 @@
 * [test cases](#test_cases-info)
 
 ## Search info
-* run ruby main.rb
-* run ruby main.rb <search> <search data> | for e.g. ruby main.rb search emma
-* run ruby main.rb find_duplicates
+* run ruby search.rb
+* run ruby search.rb <search> <search data> | for e.g. ruby main.rb search emma
+* run ruby search.rb find_duplicates
 
 ## Search_api info
 * bundle install
