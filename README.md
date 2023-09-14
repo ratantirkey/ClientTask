@@ -2,11 +2,13 @@
  It's plain ruby search program from command-line | Linux Terminal
  1) run ruby search.rb
  2) run ruby search_api.rb
- 3) run rspec spec/* or run bundle exec rspec spec/*
+ 3) run ruby search_json.rb
+ 4) run rspec spec/* or run bundle exec rspec spec/*
 
 ## Table of contents
 * [search](#search-info)
 * [search_api](#search_api-info)
+* [search_json](#search_json-info)
 * [test cases](#test_cases-info)
 
 ## Search info
@@ -23,6 +25,11 @@
 * open browser type http://localhost:3000/query?q=john&field=full_name
 * open browser type http://localhost:3000/query?q=john&field=email
 * open browser type http://localhost:3000/query?q=1&field=id
+
+## Search_json info
+* ruby search_json.rb
+* Enter the path to the JSON file . for eg. ./client/client.json
+* Enter the field to search for . for eg. full_name
 
 ## Test Cases info
 * Three test cases added 1)spec/client.rb 2) spec/search.rb 3) spec/search_api.rb

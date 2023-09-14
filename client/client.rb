@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'client_helper'
 require 'json'
 
@@ -44,4 +45,12 @@ def find_duplicates(data)
       puts "ID: #{client['id']}, Name: #{client['full_name']}, Email: #{client['email']}"
     end
   end
+end
+
+def search_json(json_data, field_to_search)
+  results = []
+  json_data.each do |item|
+    results << item[field_to_search] if item.key?(field_to_search)
+  end
+  results
 end

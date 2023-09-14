@@ -20,8 +20,18 @@ def parse_json_file(file_path)
   begin
     json_data = File.read(file_path)
     JSON.parse(json_data)
+  rescue Errno::ENOENT
+    puts "File not found: #{file_path}"
+    exit
+  rescue JSON::ParserError
+    puts "Invalid JSON format in the file: #{file_path}"
+    exit
   rescue StandardError => e
     puts "Error reading JSON file: #{e.message}"
     exit(1)
   end
+end
+
+def convert_string(field)
+  field.gsub(".", "['") + "']"
 end
