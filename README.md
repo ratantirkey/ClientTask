@@ -11,7 +11,7 @@
 
 ## Search info
 * run ruby search.rb
-* run ruby search.rb <search> <search data> | for e.g. ruby main.rb search emma
+* run ruby search.rb <search> <search data> | for e.g. ruby search.rb search emma
 * run ruby search.rb find_duplicates
 
 ## Search_api info
