@@ -31,7 +31,3 @@ def parse_json_file(file_path)
     exit(1)
   end
 end
-
-def convert_string(field)
-  field.gsub(".", "['") + "']"
-end
