@@ -32,7 +32,7 @@
 * Enter the field to search for . for eg. full_name
 
 ## Test Cases info
-* Three test cases added 1)spec/client.rb 2) spec/search.rb 3) spec/search_api.rb
-* run rspec spec/client.rb or spec/search.rb or spec/search_api.rb
-* run bundle exec rspec spec/client.rb or spec/search.rb or spec/search_api.rb
+* Four test cases added 1)spec/client.rb 2) spec/search.rb 3) spec/search_api.rb 4) spec/search_json.rb
+* run rspec spec/client.rb or spec/search.rb or spec/search_api.rb or spec/search_json.rb
+* run bundle exec rspec spec/client.rb or spec/search.rb or spec/search_api.rb or spec/search_json.rb
 * run spec/*
